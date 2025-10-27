@@ -85,3 +85,7 @@ func (vessel *Vessel) DropDatabase(name string) error {
 	dbname := fmt.Sprintf("%s.%s", name, ext)
 	return os.Remove(dbname)
 }
+
+func (vessel *Vessel) Coll(name string) *Filter {
+	return NewFilter(vessel, name)
+}
